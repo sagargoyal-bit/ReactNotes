@@ -1,24 +1,5 @@
-import React from "react";
-import ReactDOM  from "react-dom/client";
-
-
-const Title=()=>(
-  <h1>This is title</h1>
-)
-const Header=()=>(
-  <div className="header">
-  <Title/>
-     <div className="nav-items">
-    <ul>
-      <li>Home</li>
-      <li>Cart</li>
-      <li>Aboutus</li>
-    </ul>
-    </div>
-  </div>
-)
 // config driven UI
-const ResturantList = [
+export const ResturantList = [
   {
     type: "restaurant",
     data: {
@@ -171,10 +152,7 @@ const ResturantList = [
       area: "Sindhi Camp",
       totalRatingsString: "1000+ ratings",
       cloudinaryImageId: "uzklu7r1dd7kc1lto5l5",
-      cuisines: [
-        "North Indian",
-        "Thalis",
-      ],
+      cuisines: ["North Indian", "Thalis"],
       tags: [],
       costForTwo: 20000,
       costForTwoString: "₹200 FOR TWO",
@@ -639,53 +617,5 @@ const ResturantList = [
       new: false,
     },
     subtype: "basic",
-  }
+  },
 ];
-
-const ResturantCard = ({
-  name,
-  cuisines,
-  cloudinaryImageId,
-  minDeliveryTime,
-}) => {
-  return (
-    <div className="card">
-      <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
-      />
-      <h1>{name}</h1>
-      <h3>{cuisines.join(",")}</h3>
-      <h4>minDeliveryTime {minDeliveryTime}</h4>
-    </div>
-  );
-};
-
-const Body =()=>{
-  return (
-    <div className="resturent">
-      {ResturantList.map((resturent)=>{
-        return <ResturantCard {...resturent.data} />;
-      })
-}
-    </div>
-  );
-}
-
-const Footer=()=>{
-  return(
-    <h1>Footer</h1>
-  )
-}
-//Component composition
-const AppLayout=()=>{
-  return(
-    <>
-      <Header/>
-      <Body/>
-      <Footer/>
-    </>
-  )}
-
-  
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
