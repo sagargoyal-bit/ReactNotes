@@ -1,7 +1,11 @@
 export const Simmer=()=>{
-    return(
-        <>
-        this is simmer file data
-        </>
-    )
+    return (
+      <div className="RestroList">
+        {Array(10)
+          .fill("")
+          .map((e) => (
+            <div className="Simmer"></div>
+          ))}
+      </div>
+    );
 }

@@ -29,3 +29,17 @@ padding: 10px;
     display: flex;
     flex-wrap: wrap;
 }
+.RestroList{
+ display: flex;
+ flex-wrap: wrap;
+}
+.Simmer{
+
+    height: 200px;
+    width: 200px;
+    background-color: lightgray;
+    margin: 20px;
+}
+.menu{
+    display: flex;
+}

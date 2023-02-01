@@ -2,6 +2,7 @@ import ResturantCard from "./ResturantCard";
 // import { ResturantList } from "../constent";
 import { useEffect, useState } from "react";
 import { Simmer } from "./Simmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [search, setSearch] = useState("");
@@ -45,7 +46,9 @@ const Body = () => {
       <div className="resturent">
         {filterList.map((resturent) => {
           return (
-            <ResturantCard {...resturent.data} key={resturent.data.uuid} />
+            <Link to={"/restarant/"+resturent.data.id} key={resturent.data.id}>
+              <ResturantCard {...resturent.data} />
+            </Link>
           );
         })}
       </div>
