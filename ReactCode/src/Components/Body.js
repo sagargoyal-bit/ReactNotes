@@ -1,18 +1,30 @@
 import ResturantCard from "./ResturantCard";
-import { ResturantList } from "../constent";
-import { useState } from "react";
+// import { ResturantList } from "../constent";
+import { useEffect, useState } from "react";
+import { Simmer } from "./Simmer";
 
 const Body = () => {
   const [search, setSearch] = useState("");
-  const [filterList, setFilterList] = useState(ResturantList);
+  const [allRestroList, setAllrestroList] = useState([]);
+  const [filterList, setFilterList] = useState(allRestroList);
 
-  function filterData(search, ResturantList) {
-    let filteredList = ResturantList.filter((list) =>
-      list.data.name.includes(search)
-    );
+  useEffect(() => {
+    getRestorentData();
+  }, []);
+
+  async function getRestorentData() {
+    let data = await fetch("http://localhost:3000/users");
+    let json = await data.json();
+    setAllrestroList(json.data);
+    setFilterList(json.data);
+  }
+  function filterData(search, data) {
+    let filteredList = data.filter((list) => list.data.name.includes(search));
     return filteredList;
   }
-  return (
+  return allRestroList.length == 0 ? (
+    <Simmer />
+  ) : (
     <>
       <div className="search-box">
         <input
@@ -23,7 +35,7 @@ const Body = () => {
 
         <button
           onClick={() => {
-            const data = filterData(search, ResturantList);
+            const data = filterData(search, allRestroList);
             setFilterList(data);
           }}
         >
