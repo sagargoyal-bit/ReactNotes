@@ -15,4 +15,6 @@
   * [😅 Lecture forth](namaste-react/react-notes-akshaysaini/lecture-forth.md)
   * [🙃 Lecture five -05](namaste-react/react-notes-akshaysaini/lecture-five-05.md)
   * [😛 Lecture 06](namaste-react/react-notes-akshaysaini/lecture-06.md)
+  * [🧐 Lecture 07](namaste-react/react-notes-akshaysaini/lecture-07.md)
+  * [Lecture 08](namaste-react/react-notes-akshaysaini/lecture-08.md)
   * [Page 1](namaste-react/react-notes-akshaysaini/page-1.md)
