@@ -3,8 +3,8 @@ export const Simmer=()=>{
       <div className="RestroList">
         {Array(10)
           .fill("")
-          .map((e) => (
-            <div className="Simmer"></div>
+          .map((e,index) => (
+            <div className="Simmer" key={index}></div>
           ))}
       </div>
     );

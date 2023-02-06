@@ -6,9 +6,18 @@ const Header = () => (
     <Title />
     <div className="nav-items">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/Contact">Contact us</Link></li>
-        <li><Link to="/">About us</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact us</Link>
+        </li>
+        <li>
+          <Link to="/about">About us</Link>
+        </li>
+        <li>
+          <Link to="/instamart">Instamart</Link>
+        </li>
       </ul>
     </div>
   </div>

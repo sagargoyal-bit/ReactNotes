@@ -3,6 +3,8 @@ import ResturantCard from "./ResturantCard";
 import { useEffect, useState } from "react";
 import { Simmer } from "./Simmer";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [search, setSearch] = useState("");
@@ -19,40 +21,46 @@ const Body = () => {
     setAllrestroList(json.data);
     setFilterList(json.data);
   }
-  function filterData(search, data) {
-    let filteredList = data.filter((list) => list.data.name.includes(search));
-    return filteredList;
+ 
+  const online = useOnline()
+  if(!online){
+    return <h1>You are not online</h1>
   }
-  return allRestroList.length == 0 ? (
-    <Simmer />
-  ) : (
-    <>
-      <div className="search-box">
-        <input
-          type="text"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-        />
+  if (!allRestroList) return null;
 
-        <button
-          onClick={() => {
-            const data = filterData(search, allRestroList);
-            setFilterList(data);
-          }}
-        >
-          search
-        </button>
-      </div>
-      <div className="resturent">
-        {filterList.map((resturent) => {
-          return (
-            <Link to={"/restarant/"+resturent.data.id} key={resturent.data.id}>
-              <ResturantCard {...resturent.data} />
-            </Link>
-          );
-        })}
-      </div>
-    </>
-  );
+    return allRestroList?.length == 0 ? (
+      <Simmer />
+    ) : (
+      <>
+        <div className="search-box">
+          <input
+            type="text"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+
+          <button
+            onClick={() => {
+              const data = filterData(search, allRestroList);
+              setFilterList(data);
+            }}
+          >
+            search
+          </button>
+        </div>
+        <div className="resturent">
+          {filterList.map((resturent) => {
+            return (
+              <Link
+                to={"/restarant/" + resturent.data.id}
+                key={resturent.data.id}
+              >
+                <ResturantCard {...resturent.data} />
+              </Link>
+            );
+          })}
+        </div>
+      </>
+    );
 };
 export default Body;
