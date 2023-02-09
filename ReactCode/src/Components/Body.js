@@ -32,14 +32,16 @@ const Body = () => {
       <Simmer />
     ) : (
       <>
-        <div className="search-box">
+        <div className="search-box bg-pink-50 my-2 p-2 shadow-lg">
           <input
+            className="m-2 p-1 rounded-md"
             type="text"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           />
 
           <button
+            className="bg-purple-500 m-2 p-1 text-white rounded-md hover:bg-violet-600 active:bg-violet-700"
             onClick={() => {
               const data = filterData(search, allRestroList);
               setFilterList(data);
@@ -48,7 +50,7 @@ const Body = () => {
             search
           </button>
         </div>
-        <div className="resturent">
+        <div className="resturent flex flex-wrap">
           {filterList.map((resturent) => {
             return (
               <Link
