@@ -2,7 +2,7 @@
 description: Redux Store
 ---
 
-# Lecture 12
+# 😌 Lecture 12
 
 ## Redux Store:&#x20;
 
