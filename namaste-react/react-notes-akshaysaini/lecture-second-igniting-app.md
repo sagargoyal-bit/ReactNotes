@@ -33,7 +33,7 @@ description: Second lecture summary of namasty react course
 
 **Dist folder** -> it stores the minified version of your product which is production ready.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Parcel.cache and dist folder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Parcel.cache and dist folder</p></figcaption></figure>
 
 **transitive dependency** -> dependencies that are used by our package.json dependencies.
 
