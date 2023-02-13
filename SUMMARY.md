@@ -17,4 +17,5 @@
   * [😛 Lecture 06](namaste-react/react-notes-akshaysaini/lecture-06.md)
   * [🧐 Lecture 07](namaste-react/react-notes-akshaysaini/lecture-07.md)
   * [🙂 Lecture 08](namaste-react/react-notes-akshaysaini/lecture-08.md)
+  * [😁 Lecture 09](namaste-react/react-notes-akshaysaini/lecture-09.md)
   * [😌 Lecture 12](namaste-react/react-notes-akshaysaini/page-1.md)
