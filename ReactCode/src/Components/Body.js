@@ -16,6 +16,7 @@ const Body = () => {
   }, []);
 
   async function getRestorentData() {
+    
     let data = await fetch("http://localhost:3000/users");
     let json = await data.json();
     setAllrestroList(json.data);
